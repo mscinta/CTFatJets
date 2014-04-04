@@ -1,0 +1,14 @@
+#to submit jobs:
+condor_submit condor_submit
+
+#to check queue
+condor_q
+
+#to kill
+condor_rm <jobID>
+
+# jobs can be parallelized and submitted with
+# generateSubmission.py see --help for options
+# e.g.
+
+python generateSubmission.py -f QCD_250HT500_LPCSUSYPAT -n 20
