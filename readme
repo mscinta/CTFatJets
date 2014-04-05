@@ -1,0 +1,34 @@
+CODE FOR FAT JETS ANALYSIS INTENDED FOR SUSY STUDIES
+
+
+####################
+# git instructions #
+####################
+
+git clone https://github.com/mscinta/CTFatJets.git MScinta/CTFatJets
+cd MScinta/CTFatJets
+./retrieveFastJetTools.sh
+
+# compile with scram b
+
+##################
+# Main analyzer #
+##################
+
+# The main analyzer is written to run over
+# the LPC SUSY PAT-tuples:
+# https://twiki.cern.ch/twiki/bin/viewauth/CMS/LPCSusyDataset
+
+# to run locally
+
+cmsRun CTFatJets.py < options >
+
+# note options can be found with --help
+# i.e. python CTFatJets.py  --help
+
+# Example:
+# running over T1tttt sample
+
+cmsRun CTFatJets.py inputFilesConfig=T1tttt_mG1000_mLSP200_LPCSUSYPAT outputFile=T1tttt_mG1000_mLSP200_LPCSUSYPAT applySUSYfilter=True mLSP=200 mGo=1000
+
+# root files with flat tree will be saved
